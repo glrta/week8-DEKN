@@ -1,9 +1,10 @@
 import router from "./router.js";
-import home from "./routes/home.js";
 
-//User routes
+//Other
+import home from "./routes/home.js";
 import logOut from "./routes/log-out.js";
 import missing from "./routes/missing.js";
+//User routes
 import logIn from "./routes/log-in.js";
 import signUp from "./routes/sign-up.js";
 import users from "./routes/users.js";

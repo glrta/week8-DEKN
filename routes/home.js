@@ -1,8 +1,12 @@
 import query from "../query.js";
 const app = document.querySelector("#app");
 
-const html =/*html template literal*/;
+const html = /*html*/ `
+<h1>Doggy Home!</h1>
+`;
 
-function home() {};
+function home() {
+    app.innerHTML = html;
+}
 
 export default home;
