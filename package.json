@@ -1,19 +1,23 @@
 {
-  "name": "week8-dekn",
-  "version": "1.0.0",
-  "description": "API interface",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fac19/week8-DEKN.git"
-  },
-  "author": "Hettie, Gio, Kat, Ako",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/fac19/week8-DEKN/issues"
-  },
-  "homepage": "https://github.com/fac19/week8-DEKN#readme"
+    "name": "week8-dekn",
+    "version": "1.0.0",
+    "description": "API interface",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "nodemon app.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/fac19/week8-DEKN.git"
+    },
+    "author": "Hettie, Gio, Kat, Ako",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/fac19/week8-DEKN/issues"
+    },
+    "homepage": "https://github.com/fac19/week8-DEKN#readme",
+    "dependencies": {
+        "nodemon": "^2.0.3"
+    }
 }
