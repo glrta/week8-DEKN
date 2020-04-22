@@ -3,6 +3,6 @@ const app = document.querySelector("#app");
 
 const html /*html template literal*/ ;
 
-function users() {}
+function logOut() {};
 
-export default users;
+export default logOut;
