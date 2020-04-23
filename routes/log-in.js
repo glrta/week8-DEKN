@@ -19,23 +19,24 @@ const html = `
 
 function logIn({redirect}) {
     app.innerHTML = html;
-    app.querySelector("#loginForm").addEventListener("submit", event => {
-        event.preventDefault();
-        const formData = new FormData(event.target);
-        const formObj = Object.fromEntries(formData);
-        query("https://dogs-rest.herokuapp.com/v1/users/login", {
-            method: "POST",
-            body: JSON.stringify(formObj)
+  app.querySelector("#loginForm").addEventListener("submit", (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const formObject = Object.fromEntries(formData);
+
+    query("https://dogs-rest.herokuapp.com/v1/users/login", {
+      method: "POST",
+      headers: {"content-type": "application/json"},
+      body: JSON.stringify(formObject),
+    })
+    .then(body => {
+            window.localStorage.setItem("token", body.access_token);
+            redirect("/dogs"); // After login go to show all dogs
         })
-        .then(body => {
-            console.log(body)
-                window.localStorage.setItem("token", body.access_token);
-                redirect("/dogs"); // After login go to show all dogs
-            })
-            .catch(error => {
-                console.error(error);
-                app.querySelector("#message").append("Something Went Wrong!!");
-            });
+        .catch(error => {
+            console.error(error);
+            app.querySelector("#message").append("Something Went Wrong!!");
+        });
     });
 }
 

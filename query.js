@@ -10,7 +10,7 @@ function query(url, options) {
             return res.json();
         } else {
             return res.text();
-        }
+        } 
     });
 }
 
