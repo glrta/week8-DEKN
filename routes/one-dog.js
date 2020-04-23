@@ -1,15 +1,14 @@
 import query from "../query.js";
 const app = document.querySelector("#app");
 
-const basicHtml = /*html*/`
+const basicHtml = /*html*/ `
   <div id="oneDog"></div>
   <div id="message"><div>
 `;
 
-
 function createDogElement(dog) {
     const dogListItem = document.createElement("section");
-    dogListItem.classList.add("dog-section")
+    dogListItem.classList.add("dog-section");
     const dogNameElement = document.createElement("h2");
     dogNameElement.textContent = dog.name;
     const dogBreedElement = document.createElement("h3");
@@ -27,17 +26,16 @@ function createDogElement(dog) {
 }
 
 function oneDog({url}) {
-  app.innerHTML= basicHtml;
-  const dogId = url.searchParams.get("id");
-  query(`https://dogs-rest.herokuapp.com/v1/dogs/${dogId}`)
-  .then(dog => {
-      createDogElement(dog)
-      
-    })
-  .catch(error => {
-      console.error(error);
-      document.querySelector("#message").append("The Dog is drinking toilet water!")
-  })
+    app.innerHTML = basicHtml;
+    const dogId = url.searchParams.get("id");
+    query(`https://dogs-rest.herokuapp.com/v1/dogs/${dogId}`)
+        .then(dog => {
+            createDogElement(dog);
+        })
+        .catch(error => {
+            console.error(error);
+            document.querySelector("#message").append("The Dog is drinking toilet water!");
+        });
 }
 
 export default oneDog;

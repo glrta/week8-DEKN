@@ -12,7 +12,7 @@ import allMyDogs from "./routes/user.js";
 // Dog routes
 import allDogs from "./routes/all-dogs.js";
 import oneDog from "./routes/one-dog.js";
-// import newDog from "./routes/new-dog.js";
+import newDog from "./routes/new-dog.js";
 import updateDog from "./routes/update-dog.js";
 // import deleteDog from "./routes/delete-dog.js";
 
@@ -30,7 +30,7 @@ app.get("/user", allMyDogs);
 //Dogs
 app.get("/dogs", allDogs);
 app.get("/dog", oneDog);
-// app.post("/dogs/:id", newDog);
+app.get("/new-dog", newDog);
 app.get("/update", updateDog);
 // app.get("/dog", deleteDog);
 
