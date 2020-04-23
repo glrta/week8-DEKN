@@ -1,0 +1,8 @@
+:root {
+    --accentColor: hsl(271, 69%, 48%);
+    --bright: hsl(49, 97%, 54%);
+}
+
+* {
+    box-sizing: border-box;
+}
