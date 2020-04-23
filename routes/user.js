@@ -5,7 +5,12 @@ const html = `
     <h1>My Doggy Page</h1>
     <section id="container"></section>
 `;
-
+const loggedIn = `
+<div class="delete-update">
+  <a href="/update">update</a>
+  <a href="/delete">delete</a>
+</div>
+`;
 function getUserDogs(id) {
     query(`https://dogs-rest.herokuapp.com/v1/dogs/`)
         .then(dogsArray => {
@@ -15,7 +20,12 @@ function getUserDogs(id) {
             });
             return dogNewArray;
         })
-        .then(dogNewArray => dogNewArray.map(dog => createDogElement(dog)));
+        .then(dogNewArray => {
+            dogNewArray.map(dog => {
+                createDogElement(dog)
+                document.querySelector("article").innerHTML += loggedIn
+            })
+        });
 }
 
 function createDogElement(dog) {
@@ -41,5 +51,6 @@ function allMyDogs({url}) {
     const userId = window.localStorage.getItem("userId");
     getUserDogs(userId);
 }
+
 
 export default allMyDogs;

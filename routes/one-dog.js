@@ -6,10 +6,6 @@ const basicHtml = /*html*/`
   <div id="message"><div>
 `;
 
-const loggedIn = /*html*/`
-  <a href="/update">update</a>
-  <a href="delete">delete</a>
-`
 
 function createDogElement(dog) {
     const dogListItem = document.createElement("section");
@@ -36,9 +32,7 @@ function oneDog({url}) {
   query(`https://dogs-rest.herokuapp.com/v1/dogs/${dogId}`)
   .then(dog => {
       createDogElement(dog)
-      if (localStorage.getItem("token")) {
-        document.querySelector("section").append(loggedIn)
-      }
+      
     })
   .catch(error => {
       console.error(error);
