@@ -17,7 +17,6 @@ import UpdateDog from "./routes/update-dog.js";
 import deleteDog from "./routes/delete-dog.js";
 
 const app = router();
-
 //Other
 app.get("/", home);
 app.get("/log-out", logOut);
@@ -31,6 +30,8 @@ app.get("/users/:id", users);
 //Dogs
 app.get("/dogs", allDogs);
 app.get("/dogs/:id", oneDog);
-app.post("/dogs/:id", newDog);
-app.put("/dogs/:id", UpdateDog);
-app.delete("/dogs/:id", deleteDog);
+// app.post("/dogs/:id", newDog);
+// app.put("/dogs/:id", UpdateDog);
+// app.delete("/dogs/:id", deleteDog);
+
+app.listen();
