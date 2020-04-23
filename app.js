@@ -12,9 +12,9 @@ import users from "./routes/users.js";
 // Dog routes
 import allDogs from "./routes/all-dogs.js";
 import oneDog from "./routes/one-dog.js";
-import newDog from "./routes/new-dog.js";
-import UpdateDog from "./routes/update-dog.js";
-import deleteDog from "./routes/delete-dog.js";
+// import newDog from "./routes/new-dog.js";
+// import UpdateDog from "./routes/update-dog.js";
+// import deleteDog from "./routes/delete-dog.js";
 
 const app = router();
 //Other
@@ -24,7 +24,7 @@ app.get("default", missing);
 
 //Users
 app.get("/log-in", logIn);
-app.get("/users", signUp);
+app.get("/sign-up", signUp);
 app.get("/users/:id", users);
 
 //Dogs
