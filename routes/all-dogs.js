@@ -8,6 +8,7 @@ audio.src = "../surprise/who-let-the-dogs-out-ringtone.mp3";
 
 const html = /*html*/ `
 <h1>Our Fury Friends!</h1>
+<button id="mute">Stop This Madness</button>
 <ul id="allDogs" class="all-dogs-container"></ul>
 `;
 
@@ -36,6 +37,9 @@ function allDogs() {
         .then(arrayDogs => {
             audio.play()
             app.innerHTML = html;
+            document.querySelector("#mute").addEventListener("click", () => {   
+                audio.pause();
+            }); 
             arrayDogs.map(dog => createDogElement(dog));
         })
         .catch(err => console.error(err));
@@ -45,9 +49,3 @@ function allDogs() {
 export default allDogs;
 
 // audio.play()
-audio.addEventListener("canplaythrough", function () {
-        setTimeout(function(){
-            audio.pause();
-        },
-        3000);
-}, false); 
