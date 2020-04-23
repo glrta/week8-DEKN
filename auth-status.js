@@ -7,7 +7,7 @@ function isLoggedIn() {
     if (token) {
         link1.href = "/log-out";
         link1.textContent = "Log Out";
-        link2.href = "#"; // View my dogs
+        link2.href = "/user"; // View my dogs
         link2.textContent = "View My Dogs";
     } else {
         link1.href = "/log-in";
