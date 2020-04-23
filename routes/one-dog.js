@@ -20,6 +20,7 @@ function createDogElement(dog) {
     dogBreedElement.textContent = dog.breed;
     const dogImageElement = document.createElement("img");
     dogImageElement.src = dog.image;
+    dogImageElement.alt = `Image of lovely ${dog.name}`;
     dogImageElement.width = 400;
 
     dogListItem.append(dogNameElement);
