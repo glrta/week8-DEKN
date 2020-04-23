@@ -13,7 +13,7 @@ const loggedIn = /*html*/`
 
 function createDogElement(dog) {
     const dogListItem = document.createElement("section");
-  
+    dogListItem.classList.add("dog-section")
     const dogNameElement = document.createElement("h2");
     dogNameElement.textContent = dog.name;
     const dogBreedElement = document.createElement("h3");
