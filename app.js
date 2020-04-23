@@ -29,7 +29,7 @@ app.get("/user/:id", user);
 
 //Dogs
 app.get("/dogs", allDogs);
-app.get("/dog/:id", oneDog);
+app.get("/dog", oneDog);
 // app.post("/dogs/:id", newDog);
 // app.put("/dogs/:id", UpdateDog);
 // app.delete("/dogs/:id", deleteDog);
