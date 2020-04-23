@@ -1,8 +1,77 @@
 :root {
     --accentColor: hsl(271, 69%, 48%);
+    --accentColorHover: hsl(271, 71%, 35%);
     --bright: hsl(49, 97%, 54%);
 }
 
 * {
     box-sizing: border-box;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+a {
+    text-decoration: none;
+}
+.navbar {
+    width: 50vw;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navbar > a,
+.app-container > a {
+    font-weight: 800;
+    text-decoration: none;
+    color: #535353;
+}
+.navbar > a:hover {
+    color: black;
+}
+.app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+.app-container > a {
+    color: white;
+    padding: 1rem;
+    border-radius: 0.6rem;
+    background-color: var(--accentColor);
+}
+
+.app-container > a:hover {
+    background-color: var(--accentColorHover);
+}
+
+.all-dogs-container li,
+.dog-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#loginForm,
+#signupForm {
+    display: flex;
+    flex-direction: column;
+}
+label {
+    margin-top: 1rem;
+}
+button {
+    margin-top: 1rem;
+    color: white;
+    font-weight: 800;
+    padding: 1rem;
+    background-color: var(--accentColor);
+    border: none;
+    border-radius: 10px;
+}
+@media screen and (max-width: 767px) {
+    .navbar {
+        width: 80vw;
+    }
 }

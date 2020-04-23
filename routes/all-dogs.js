@@ -2,8 +2,8 @@ import query from "../query.js";
 const app = document.querySelector("#app");
 
 const html = /*html*/ `
-<h1>All the dogs!</h1>
-<ul id="allDogs"></ul>
+<h1>Our Fury Friends!</h1>
+<ul id="allDogs" class="all-dogs-container"></ul>
 `;
 // [{id: 1, name: "Luna", breed: "Cocker Spaniel", owner: 1}];
 
