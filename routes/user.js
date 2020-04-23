@@ -11,7 +11,7 @@ function getUserDogs(id) {
         .then(dogsArray => {
             let dogNewArray = [];
             dogsArray.map(dog => {
-                if (dog.owner === id) dogNewArray.push(dog);
+                if (dog.owner == id) dogNewArray.push(dog);
             });
             return dogNewArray;
         })
@@ -38,7 +38,6 @@ function createDogElement(dog) {
 
 function allMyDogs({url}) {
     app.innerHTML = html;
-    // const userId = url.searchParams.get("owner");
     const userId = window.localStorage.getItem("userId");
     getUserDogs(userId);
 }

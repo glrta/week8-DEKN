@@ -22,13 +22,14 @@ function logIn({redirect}) {
     app.querySelector("#loginForm").addEventListener("submit", event => {
         event.preventDefault();
         const formData = new FormData(event.target);
-        const formObj = Object.fromEntries(formData);
+        const formObject = Object.fromEntries(formData);
+
         query("https://dogs-rest.herokuapp.com/v1/users/login", {
             method: "POST",
-            body: JSON.stringify(formObj)
+            headers: {"content-type": "application/json"},
+            body: JSON.stringify(formObject)
         })
             .then(body => {
-                console.log(body);
                 window.localStorage.setItem("token", body.access_token);
                 window.localStorage.setItem("userId", body.id);
                 redirect("/dogs"); // After login go to show all dogs
