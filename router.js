@@ -2,8 +2,6 @@ function router() {
     let routes = {};
 
     function get(path, callback) {
-        console.log("hi1");
-
         routes[path] = callback;
     }
 
