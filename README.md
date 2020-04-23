@@ -24,10 +24,10 @@ __Stretch__
 
 ### Acceptance Criteria
 
-- [ ] A single-page app (only one HTML file)
-- [ ] Client-side routing
-- [ ] Accessible signup/login forms
-- [ ] Token-based authentication (storing token in localStorage)
+- [x] A single-page app (only one HTML file)
+- [x] Client-side routing
+- [x] Accessible signup/login forms
+- [x] Token-based authentication (storing token in localStorage)
 - [ ] Form for adding new resources (only for logged in users)
 
 ### Authors

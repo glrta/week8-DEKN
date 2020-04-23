@@ -13,7 +13,7 @@ import allMyDogs from "./routes/user.js";
 import allDogs from "./routes/all-dogs.js";
 import oneDog from "./routes/one-dog.js";
 import newDog from "./routes/new-dog.js";
-// import UpdateDog from "./routes/update-dog.js";
+import updateDog from "./routes/update-dog.js";
 // import deleteDog from "./routes/delete-dog.js";
 
 const app = router();
@@ -31,7 +31,7 @@ app.get("/user", allMyDogs);
 app.get("/dogs", allDogs);
 app.get("/dog", oneDog);
 app.get("/new-dog", newDog);
-// app.put("/dogs/:id", UpdateDog);
-// app.delete("/dogs/:id", deleteDog);
+app.get("/update", updateDog);
+// app.get("/dog", deleteDog);
 
 app.listen();
