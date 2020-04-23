@@ -20,7 +20,7 @@ const app = router();
 //Other
 app.get("/", home);
 app.get("/log-out", logOut);
-app.get("/missing", missing);
+app.get("default", missing);
 
 //Users
 app.get("/log-in", logIn);
