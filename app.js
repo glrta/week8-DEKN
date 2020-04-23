@@ -23,7 +23,7 @@ app.get("/log-out", logOut);
 app.get("/missing", missing);
 
 //Users
-app.get("/users/login", logIn);
+app.get("/log-in", logIn);
 app.get("/users", signUp);
 app.get("/users/:id", users);
 
