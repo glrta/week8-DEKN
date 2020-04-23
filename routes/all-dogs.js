@@ -1,6 +1,7 @@
 import query from "../query.js";
 const app = document.querySelector("#app");
 
+// The secret code. 
 let audio = document.createElement("audio");
 audio.src = "../surprise/who-let-the-dogs-out-ringtone.mp3";
 
@@ -42,8 +43,6 @@ function allDogs() {
     
    // setTimeout(()=> {audio.pause(); audio.currentTime =0;}, 3000)
 export default allDogs;
-
-// The secret code. 
 
 // audio.play()
 audio.addEventListener("canplaythrough", function () {
