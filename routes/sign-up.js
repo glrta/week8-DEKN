@@ -42,4 +42,5 @@ function signUp({redirect}) {
     });
 }
 
+
 export default signUp;

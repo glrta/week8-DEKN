@@ -17,7 +17,6 @@ import oneDog from "./routes/one-dog.js";
 // import deleteDog from "./routes/delete-dog.js";
 
 const app = router();
-
 //Other
 app.get("/", home);
 app.get("/log-out", logOut);
