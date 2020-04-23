@@ -7,7 +7,7 @@ import missing from "./routes/missing.js";
 //User routes
 import logIn from "./routes/log-in.js";
 import signUp from "./routes/sign-up.js";
-import users from "./routes/users.js";
+import user from "./routes/user.js";
 
 // Dog routes
 import allDogs from "./routes/all-dogs.js";
@@ -20,16 +20,16 @@ const app = router();
 //Other
 app.get("/", home);
 app.get("/log-out", logOut);
-app.get("/missing", missing);
+app.get("default", missing);
 
 //Users
 app.get("/log-in", logIn);
 app.get("/sign-up", signUp);
-app.get("/users/:id", users);
+app.get("/user/:id", user);
 
 //Dogs
 app.get("/dogs", allDogs);
-app.get("/dogs/:id", oneDog);
+app.get("/dog/:id", oneDog);
 // app.post("/dogs/:id", newDog);
 // app.put("/dogs/:id", UpdateDog);
 // app.delete("/dogs/:id", deleteDog);

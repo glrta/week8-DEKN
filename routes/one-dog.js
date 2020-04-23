@@ -1,9 +1,11 @@
 import query from "../query.js";
 const app = document.querySelector("#app");
 
+const html = `
+<h1>HERE IS YOUR DOG</h1>`;
 
-// const html /*html template literal*/ ;
+function oneDog() {
+    app.append(html);
+}
 
-function deleteDog() {}
-
-export default deleteDog;
+export default oneDog;
