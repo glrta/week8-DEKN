@@ -7,7 +7,7 @@ import missing from "./routes/missing.js";
 //User routes
 import logIn from "./routes/log-in.js";
 import signUp from "./routes/sign-up.js";
-import user from "./routes/user.js";
+import allMyDogs from "./routes/user.js";
 
 // Dog routes
 import allDogs from "./routes/all-dogs.js";
@@ -25,7 +25,7 @@ app.get("default", missing);
 //Users
 app.get("/log-in", logIn);
 app.get("/sign-up", signUp);
-app.get("/user/:id", user);
+app.get("/user", allMyDogs);
 
 //Dogs
 app.get("/dogs", allDogs);

@@ -32,7 +32,7 @@ function signUp({redirect}) {
         })
             .then(body => {
                 window.localStorage.setItem("token", body.access_token);
-                // window.localStorage.setItem("userId", body.id)
+                window.localStorage.setItem("userId", body.id);
                 redirect("/dogs"); // After signup go to show all dogs
             })
             .catch(error => {
@@ -41,6 +41,5 @@ function signUp({redirect}) {
             });
     });
 }
-
 
 export default signUp;

@@ -27,9 +27,10 @@ function logIn({redirect}) {
             method: "POST",
             body: JSON.stringify(formObj)
         })
-        .then(body => {
-            console.log(body)
+            .then(body => {
+                console.log(body);
                 window.localStorage.setItem("token", body.access_token);
+                window.localStorage.setItem("userId", body.id);
                 redirect("/dogs"); // After login go to show all dogs
             })
             .catch(error => {
