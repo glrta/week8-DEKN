@@ -4,7 +4,7 @@ const app = document.querySelector("#app");
 const html = /*html*/ `
 <h1>Doggy Home!</h1>
 <p>A page to view all of the lovely doggies</p>
-<a href="./dogs">Click here to view all dogs</a>
+<a href="./dogs">All Dogs</a>
 `;
 
 // const loggedIn = `
