@@ -9,8 +9,8 @@ const html = /*html*/ `
 
 function createDogElement(dog) {
     const dogListItem = document.createElement("li");
-    const dogAnchor = document.createElement("a");
-    dogAnchor.href = `./dogs/${dog.id}`;
+    const dogAnchor = document.createElement("a")
+    dogAnchor.href = `/dog?id=${dog.id}`
     const dogNameElement = document.createElement("h2");
     dogNameElement.textContent = dog.name;
     const dogBreedElement = document.createElement("h3");
