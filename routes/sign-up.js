@@ -15,7 +15,7 @@ const html = `
 
         <div id="message"></div>
 
-        <button type="submit">Log in</button>
+        <button type="submit">Sign Up!</button>
     </form>
 `;
 
@@ -28,6 +28,7 @@ function signUp({redirect}) {
 
         query("https://dogs-rest.herokuapp.com/v1/users", {
             method: "POST",
+            headers: {"content-type": "application/json"},
             body: JSON.stringify(formObj)
         })
             .then(body => {
