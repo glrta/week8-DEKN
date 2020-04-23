@@ -3,6 +3,7 @@ function router() {
 
     function get(path, callback) {
         routes[path] = callback;
+        console.log(routes);
     }
 
     function navigate(url) {

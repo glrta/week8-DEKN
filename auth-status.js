@@ -1,19 +1,23 @@
-const loggedIn = `
-    <a href = "/log-out">Log Out</a>
-    <a href="#">View My Dogs</a>
-`;
-
-const loggedOut = /*html*/ `
-    <a href="/log-in">Log In</a>
-    <a href="/sign-up">Sign Up here</a>
-`;
-
-const header = document.querySelector("nav");
+const header = document.querySelector("#navBar");
 const token = localStorage.getItem("token");
 
 function isLoggedIn() {
-    if (token) header.append(loggedIn);
-    else header.append(loggedOut);
+    const link1 = document.createElement("a");
+    const link2 = document.createElement("a");
+    if (token) {
+        link1.href = "/log-out";
+        link1.textContent = "Log Out";
+        link2.href = "#"; // View my dogs
+        link2.textContent = "View My Dogs";
+    } else {
+        link1.href = "/log-in";
+        link1.textContent = "Log In";
+        link2.href = "/sign-up";
+        link2.textContent = "Sign Up";
+    }
+
+    header.append(link1);
+    header.append(link2);
 }
 
 isLoggedIn();

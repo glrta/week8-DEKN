@@ -6,7 +6,6 @@ const html = `
     <section></section>
 `;
 
+function user() {}
 
-function users() {}
-
-export default users;
+export default user;
