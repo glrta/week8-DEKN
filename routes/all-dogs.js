@@ -2,8 +2,8 @@ import query from "../query.js";
 const app = document.querySelector("#app");
 
 // The secret code.
-// let audio = document.createElement("audio");
-// audio.src = "../surprise/who-let-the-dogs-out-ringtone.mp3";
+let audio = document.createElement("audio");
+audio.src = "../surprise/who-let-the-dogs-out-ringtone.mp3";
 
 const html = /*html*/ `
 <h1>Our Fury Friends!</h1>
@@ -16,6 +16,7 @@ function createDogElement(dog) {
     const dogListItem = document.createElement("li");
     const dogAnchor = document.createElement("a");
     dogAnchor.href = `/dog?id=${dog.id}`;
+    dogAnchor.textContent = dog.name;
     const dogNameElement = document.createElement("h2");
     dogNameElement.textContent = dog.name;
     const dogBreedElement = document.createElement("h3");
@@ -24,8 +25,8 @@ function createDogElement(dog) {
     dogImageElement.src = dog.image;
     dogImageElement.width = 400;
 
-    dogAnchor.append(dogNameElement);
-    dogListItem.append(dogAnchor);
+    dogNameElement.append(dogAnchor);
+    dogListItem.append(dogNameElement);
     dogListItem.append(dogBreedElement);
     dogListItem.append(dogImageElement);
 
@@ -35,7 +36,7 @@ function createDogElement(dog) {
 function allDogs() {
     query("https://dogs-rest.herokuapp.com/v1/dogs")
         .then(arrayDogs => {
-            // audio.play();
+            audio.play();
             app.innerHTML = html;
             const addDog = document.querySelector("#addDog");
             const token = localStorage.getItem("token");
