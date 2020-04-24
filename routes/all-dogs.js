@@ -14,18 +14,18 @@ const html = /*html*/ `
 
 function createDogElement(dog) {
     const dogListItem = document.createElement("li");
-    const dogAnchor = document.createElement("a")
-    dogAnchor.href = `/dog?id=${dog.id}`
     const dogNameElement = document.createElement("h2");
-    dogNameElement.textContent = dog.name;
+    const dogAnchor = document.createElement("a")
+    dogAnchor.textContent = dog.name;
+    dogAnchor.href = `/dog?id=${dog.id}`
     const dogBreedElement = document.createElement("h3");
     dogBreedElement.textContent = dog.breed;
     const dogImageElement = document.createElement("img");
     dogImageElement.src = dog.image;
     dogImageElement.width = 400;
 
-    dogAnchor.append(dogNameElement);
-    dogListItem.append(dogAnchor);
+    dogNameElement.append(dogAnchor);
+    dogListItem.append(dogNameElement);
     dogListItem.append(dogBreedElement);
     dogListItem.append(dogImageElement);
 
