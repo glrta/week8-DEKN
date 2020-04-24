@@ -36,7 +36,7 @@ function updateDog({url, redirect}) {
     })
     .catch(error => {
       console.error(error);
-      app.querySelector("#message").append("Something Went Wrong With updatign your doggo!!");
+      app.querySelector("#message").append("Something Went Wrong With Updating Your Doggy!");
     });
   })
 }
