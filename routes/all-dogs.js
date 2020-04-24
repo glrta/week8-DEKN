@@ -32,10 +32,11 @@ function createDogElement(dog) {
     document.getElementById("allDogs").append(dogListItem);
 }
 
-function allDogs() {
+function allDogs() {// audio.play();
+
     query("https://dogs-rest.herokuapp.com/v1/dogs")
         .then(arrayDogs => {
-            //audio.play();
+            audio.play();
             app.innerHTML = html;
             const addDog = document.querySelector("#addDog");
             const token = localStorage.getItem("token");

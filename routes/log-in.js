@@ -1,4 +1,5 @@
 import query from "../query.js";
+import isLoggedIn from "../auth-status.js";
 
 const app = document.querySelector("#app");
 
@@ -32,6 +33,7 @@ function logIn({redirect}) {
             .then(body => {
                 window.localStorage.setItem("token", body.access_token);
                 window.localStorage.setItem("userId", body.id);
+                isLoggedIn();
                 redirect("/dogs"); // After login go to show all dogs
             })
             .catch(error => {
