@@ -27,7 +27,10 @@ function updateDog({url, redirect}) {
     // console.log(formObject)
     query(`https://dogs-rest.herokuapp.com/v1/dogs/${dogId}`, {
       method: "PUT",
-      headers: {"content-type": "application/json"},
+      headers: {
+        "content-type": "application/json",
+        authorization: `Bearer: ${token}`
+  },
       body: JSON.stringify(formObject)
     })
     .then(dog => {

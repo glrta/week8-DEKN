@@ -23,13 +23,14 @@ function getUserDogs(id) {
         .then(dogNewArray => {
             dogNewArray.map(dog => {
                 createDogElement(dog)
-                document.querySelector("article").innerHTML += loggedIn
+                document.querySelector(`.dog${dog.id}`).innerHTML += loggedIn
             })
         });
 }
 
 function createDogElement(dog) {
     const dogListItem = document.createElement("article");
+    dogListItem.classList.add(`dog${dog.id}`)
     const dogNameElement = document.createElement("h2");
     dogNameElement.textContent = dog.name;
     const dogBreedElement = document.createElement("h3");

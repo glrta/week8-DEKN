@@ -47,9 +47,8 @@ function newDog({redirect}) {
                     authorization: `Bearer ${token}`
                 }
             }).then(dogObj => {
-                console.log(dogObj);
-                // const dogId = dogObj.id;
-                // redirect(`/dog?id=${dogId}`);
+                const dogId = dogObj.id;
+                redirect(`/dog?id=${dogId}`);
             });
         });
     }

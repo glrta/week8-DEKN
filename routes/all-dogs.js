@@ -35,7 +35,7 @@ function createDogElement(dog) {
 function allDogs() {
     query("https://dogs-rest.herokuapp.com/v1/dogs")
         .then(arrayDogs => {
-            audio.play();
+            //audio.play();
             app.innerHTML = html;
             const addDog = document.querySelector("#addDog");
             const token = localStorage.getItem("token");
@@ -52,7 +52,5 @@ function allDogs() {
         .catch(err => console.error(err));
 }
 
-// setTimeout(()=> {audio.pause(); audio.currentTime =0;}, 3000)
 export default allDogs;
 
-// audio.play()
