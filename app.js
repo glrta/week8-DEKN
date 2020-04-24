@@ -1,4 +1,6 @@
 import router from "./router.js";
+import isLoggedIn from "./auth-status.js";
+isLoggedIn();
 
 //Other
 import home from "./routes/home.js";
