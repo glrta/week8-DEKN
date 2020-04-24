@@ -5,12 +5,12 @@ const html = `
     <h1>My Doggy Page</h1>
     <section id="container"></section>
 `;
-const loggedIn = `
-<div class="delete-update">
-  <a href="/update">update</a>
-  <a href="/delete">delete</a>
-</div>
-`;
+// const loggedIn = `
+// <div class="delete-update">
+//   <a class="update-button">update</a>
+//   <a class="delete-button">delete</a>
+// </div>
+// `;
 function getUserDogs(id) {
     query(`https://dogs-rest.herokuapp.com/v1/dogs/`)
         .then(dogsArray => {
@@ -23,7 +23,8 @@ function getUserDogs(id) {
         .then(dogNewArray => {
             dogNewArray.map(dog => {
                 createDogElement(dog)
-                document.querySelector(`.dog${dog.id}`).innerHTML += loggedIn
+                // document.querySelector(`.dog${dog.id}`).innerHTML += loggedIn
+                
             })
         });
 }
@@ -40,9 +41,21 @@ function createDogElement(dog) {
     dogImageElement.alt = `Image of lovely ${dog.name}`;
     dogImageElement.width = 400;
 
-    dogListItem.append(dogNameElement);
-    dogListItem.append(dogBreedElement);
-    dogListItem.append(dogImageElement);
+    // Update Button 
+    const dogUpdateBtn = document.createElement("a")
+    dogUpdateBtn.classList.add("update-button");
+    dogUpdateBtn.textContent = "Update";
+    dogUpdateBtn.href = `/update?id=${dog.id}`;
+    // Delete Button
+    const dogDeleteBtn = document.createElement("a")
+    dogDeleteBtn.classList.add("delete-button");
+    dogDeleteBtn.textContent = "delete";
+    dogDeleteBtn.href = `/delete?id=${dog.id}`
+
+    // dogListItem.append(dogUpdateBtn,dele)
+    dogListItem.append(dogNameElement, dogBreedElement, dogImageElement, dogUpdateBtn, dogDeleteBtn);
+    // dogListItem.append(dogBreedElement);
+    // dogListItem.append(dogImageElement);
 
     document.getElementById("container").append(dogListItem);
 }
