@@ -2,8 +2,8 @@ import query from "../query.js";
 const app = document.querySelector("#app");
 
 // The secret code.
-// let audio = document.createElement("audio");
-// audio.src = "../surprise/who-let-the-dogs-out-ringtone.mp3";
+let audio = document.createElement("audio");
+audio.src = "../surprise/who-let-the-dogs-out-ringtone.mp3";
 
 const html = /*html*/ `
 <h1>Our Fury Friends!</h1>
@@ -32,10 +32,11 @@ function createDogElement(dog) {
     document.getElementById("allDogs").append(dogListItem);
 }
 
-function allDogs() {
+function allDogs() {// audio.play();
+
     query("https://dogs-rest.herokuapp.com/v1/dogs")
         .then(arrayDogs => {
-            // audio.play();
+            audio.play();
             app.innerHTML = html;
             const addDog = document.querySelector("#addDog");
             const token = localStorage.getItem("token");
@@ -52,7 +53,5 @@ function allDogs() {
         .catch(err => console.error(err));
 }
 
-// setTimeout(()=> {audio.pause(); audio.currentTime =0;}, 3000)
 export default allDogs;
 
-// audio.play()

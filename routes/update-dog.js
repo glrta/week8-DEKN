@@ -19,20 +19,23 @@ const html = `
 function updateDog({url, redirect}) {
   app.innerHTML= html;
   const dogId = url.searchParams.get("id");
+  const token = localStorage.getItem("token");
   document.querySelector("#updateForm").addEventListener("submit", event => {
-
     event.preventDefault();
     const formData = new FormData(event.target);
     const formObject = Object.fromEntries(formData);
-    // console.log(formObject)
     query(`https://dogs-rest.herokuapp.com/v1/dogs/${dogId}`, {
       method: "PUT",
-      headers: {"content-type": "application/json"},
+      headers: {
+        "content-type": "application/json",
+        Authorization: `Bearer ${token}`,
+        mode: 'no-cors'
+      },
       body: JSON.stringify(formObject)
     })
     .then(dog => {
       console.log(dog)
-      redirect(`/user`)
+      redirect("/dogs")
     })
     .catch(error => {
       console.error(error);
