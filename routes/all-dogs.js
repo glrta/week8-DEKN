@@ -18,7 +18,6 @@ function createDogElement(dog) {
     dogAnchor.href = `/dog?id=${dog.id}`;
     dogAnchor.textContent = dog.name;
     const dogNameElement = document.createElement("h2");
-    dogNameElement.textContent = dog.name;
     const dogBreedElement = document.createElement("h3");
     dogBreedElement.textContent = dog.breed;
     const dogImageElement = document.createElement("img");
