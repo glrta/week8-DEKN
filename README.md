@@ -1,5 +1,7 @@
 # week8-DEKN
 
+![screenshot](screenshot.png)
+
 ## Installing locally
 
 1. Clone the repo
