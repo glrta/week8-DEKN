@@ -1,3 +1,10 @@
+# FAC19 week 8 project
+
+At [Founders and Coders](https://www.foundersandcoders.com/about/) coding bootcamp we are tasked every week with a different project. A MVP is built in 1.5 days by 4 developers that follow the Agile methodology.
+
+__Week 8 topic__: Full-Stack App
+
+
 # week8-DEKN
 
 ![screenshot](screenshot.png)
