@@ -4,6 +4,9 @@ At [Founders and Coders](https://www.foundersandcoders.com/about/) coding bootca
 
 __Week 8 topic__: Full-Stack App
 
+See [week 8 schedule](https://founders-and-coders.gitbook.io/coursebook/week-8/schedule).
+
+---
 
 # week8-DEKN
 
